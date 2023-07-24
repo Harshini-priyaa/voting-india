@@ -53,6 +53,22 @@ contract Voting {
         Candidate memory candidate = candidates[_candidateIndex];
         return (candidate.name, candidate.voteCount);
     }
-}
+
+    // final result function
+    function result() public view returns (string memory, uint256) {
+        uint256 highestVotes = 0;
+        string memory winnerName;
+
+        for (uint256 i = 0; i < candidates.length; i++) {
+            if (candidates[i].voteCount > highestVotes) {
+                highestVotes = candidates[i].voteCount;
+                winnerName = candidates[i].name;
+            }
+        }
+
+        return (winnerName, highestVotes);
+    }
+     }
+
 
 

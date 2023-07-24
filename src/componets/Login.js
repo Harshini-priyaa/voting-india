@@ -34,6 +34,7 @@ function Login() {
       console.error('Error connecting to wallet:', error);
     }
   };
+  
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -115,6 +116,7 @@ function Login() {
             <button className="btn btn-primary" onClick={connectWallet}>
               Connect-Wallet
             </button>
+           
           </div>
 
           <br></br>
